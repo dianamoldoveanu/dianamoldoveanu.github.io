@@ -153,14 +153,6 @@ $('.tab').click(function()
    var i=$(this).data('i');
    var j=$(this).data('j');
 
-
-   //verifica daca playerul actual nu mai are carti->a castigat
-   if(array[gamer-1].length===0)
-     {
-       alert('Player '+gamer+' is the winner!');
-       location.reload();
-     }
-
 if(ace===1)
   {
     if(array[i][j].semn===sign)val= sign;
@@ -320,6 +312,13 @@ else
       alert('Please click for the right player!');
       afisaretabs();
     }
+ //verifica daca playerul actual nu mai are carti->a castigat
+   if(array[gamer-1].length===0)
+     {
+       alert('Player '+gamer+' is the winner!');
+       location.reload();
+     }   
+    
 });
   }
 
