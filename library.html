@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <title>Library</title>
+  <meta charset="utf-8">
+  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+  <script src="library.js">
+
+  </script>
+
+  <style type="text/css">
+
+  h1{font-size: 30px;
+     font-family:Helvetica, Arial, sans-serif;
+     font-style:italic;
+     text-align:center;}
+
+#form{line-height: 100%;}
+
+
+  #submit {display:inline-block;
+           width: 80px;}
+
+
+
+
+
+  tr td:last-child{text-align:center;
+                   }
+
+  tr td:nth-last-child(2){text-align:center;}
+  tr td:nth-last-child(3){text-align:center;}
+
+
+  .maincontent{padding:20px 20px 20px 20px;
+               margin-right:60px;
+               margin-left:60px;
+          }
+
+  h1{margin:50px 30px 0px 50px;
+     padding-bottom: 20px;
+     font: italic bold  Georgia, serif;
+     color:#A9A9A9;
+   }
+
+
+  table{margin:20px 0 30px 0;}
+
+  table,td,th{ border:1px solid #D8D8D8;}
+
+  tr:first-child{text-align:center;
+                 color:#888888;
+                 background-color:#EAF2D3;}
+
+  #buton1{margin-right:300px;}
+
+
+#tab{text-align:center;
+}
+
+
+
+
+  </style>
+
+</head>
+
+<body>
+
+  <h1>Carti existente</h1>
+
+<div class="maincontent">
+  <table class="table table-hover"  style="width:100%" id="tabel">
+
+  </table>
+
+
+  <br>
+
+<div class="form-horizontal" id="tab">
+
+  Adaugati o carte noua in tabelul de sus:
+  <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal" id="buton1">Adaugare</button>
+
+  Sortati cartile dupa numarul de pagini:
+  <button type="button" class="btn btn-default" id="buton2">Sortare </button>
+
+</div>
+
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Date carte noua:</h4>
+      </div>
+      <div class="modal-body">
+
+
+        <form id="form">
+  <div class="form-group">
+    <label for="titlu">Titlu:</label>
+    <input type="text" class="form-control" id="titlu" placeholder="Adauga text…">
+  </div>
+
+  <div class="form-group">
+    <label for="autor">Autor:</label>
+    <input type="text" class="form-control" id="autor" placeholder="Adauga text…">
+  </div>
+
+  <div class="form-group">
+    <label for="editura">Editura:</label>
+    <input type="text" class="form-control" id="editura" placeholder="Adauga text…">
+  </div>
+
+  <div class="form-group">
+    <label for="nrpag">Numar pagini:</label>
+    <input type="text" class="form-control" id="nrpag" placeholder="Adauga text…">
+  </div>
+
+  <div class="form-group">
+    <label for="imprumut">Imprumutata(DA/NU):</label>
+    <input type="text" class="form-control" id="imprumut" placeholder="Adauga text…">
+  </div>
+
+
+       </form>
+
+       </div>
+       <div class="modal-footer">
+
+         <input type="button" class="btn btn-primary" id="submit" value="Submit">
+         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+       </div>
+     </div>
+     </div>
+     </div>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+        <h4 class="modal-title" id="myModalLabel">Modificare date carte:</h4>
+      </div>
+      <div class="modal-body">
+
+
+        <form id="form1">
+  <div class="form-group">
+    <label for="titlu1">Titlu:</label>
+    <input type="text" class="form-control" id="titlu1" >
+  </div>
+
+  <div class="form-group">
+    <label for="autor1">Autor:</label>
+    <input type="text" class="form-control" id="autor1" >
+  </div>
+
+  <div class="form-group">
+    <label for="editura1">Editura:</label>
+    <input type="text" class="form-control" id="editura1" >
+  </div>
+
+  <div class="form-group">
+    <label for="nrpag1">Numar pagini:</label>
+    <input type="text" class="form-control" id="nrpag1" >
+  </div>
+
+  <div class="form-group">
+    <label for="imprumut1">Imprumutata(DA/NU):</label>
+    <input type="text" class="form-control" id="imprumut1">
+  </div>
+
+
+       </form>
+
+       </div>
+       <div class="modal-footer">
+
+         <input type="button" class="btn btn-primary" id="submit1" value="Submit">
+         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       </div>
+     </div>
+     </div>
+     </div>
+
+
+  <script>
+
+//adaugare carti in array
+
+  newBook('Titlu','Autor','Editura','Numar pagini','Imprumutata','Imagine','Modificare','Sterge');
+  newBook('Un veac de singuratate','Gabriel Garcia Marquez','RAO','480','NU','http://1.bp.blogspot.com/-XMDou4ml8js/U1LNfqom97I/AAAAAAAAGt0/4f4LeZ2aKjs/s1600/desc%C4%83rcare.jpg','Modifica','http://vignette3.wikia.nocookie.net/criminal-case-grimsborough/images/b/b1/Delete_Icon.png/revision/latest?cb=20141216101607');
+  newBook('Alchimistul','Paulo Coelho','Humanitas','224','DA','http://gabrielagambra.ro/wp-content/uploads/2013/03/alchimistul-coelho-197x300.jpg','Modifica','http://vignette3.wikia.nocookie.net/criminal-case-grimsborough/images/b/b1/Delete_Icon.png/revision/latest?cb=20141216101607');
+  newBook('Eleganta Ariciului','Muriel Barbery ','Nemira','360','NU','https://nemira.ro/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/0/_/0_1755.jpg','Modifica','http://vignette3.wikia.nocookie.net/criminal-case-grimsborough/images/b/b1/Delete_Icon.png/revision/latest?cb=20141216101607');
+
+
+  function afisaretab(){
+
+
+  $('#tabel').empty();
+
+  $('#tabel').append('<tr> <td>'+bookDB[0].titlu+'</td> <td>'+bookDB[0].autor+'</td> <td>'+bookDB[0].editura+'</td> <td>'+bookDB[0].nrpag+'</td> <td>'+bookDB[0].imprumutata+'</td><td>'+bookDB[0].imagine+'</td><td>'+bookDB[0].modifica+'</td><td>'+bookDB[0].sterge+'</td></tr>');
+
+  for(i=1;i<bookDB.length;i++)
+
+    $('#tabel').append('<tr> <td>'+bookDB[i].titlu+'</td> <td>'+bookDB[i].autor+'</td> <td>'+bookDB[i].editura+'</td> <td>'+bookDB[i].nrpag+'</td> <td>'+bookDB[i].imprumutata+ '</td><td><img src='+bookDB[i].imagine+' width="60" height="80"> </td><td class="mod" data-n="'+i+'">  <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal1" >Modifica</button> </td><td class="del" data-n="'+i+'"> <img src="http://vignette3.wikia.nocookie.net/criminal-case-grimsborough/images/b/b1/Delete_Icon.png/revision/latest?cb=20141216101607" width="30" height="30" > </td></tr>');
+
+    //for(var j=1;j<bookDB.length;j++)
+
+
+  //click pe img trash pt a sterge o carte(obiect din array);
+        $( '.del').click(function(){
+                          if(confirm("Esti sigur/a ca vrei sa stergi cartea?")){
+                                            var n = $(this).data ('n');
+                                            bookDB.splice(n,1);
+                                            afisaretab();
+                                            }
+                             });
+
+  //click pt modifica continutul unei carti
+
+       $( '.mod').click(function(){
+
+                                 var m=$(this).data('n');
+
+                                 $('#titlu1').val(bookDB[m].titlu);
+                                 $('#autor1').val(bookDB[m].autor);
+                                 $('#editura1').val(bookDB[m].editura);
+                                 $('#nrpag1').val(bookDB[m].nrpag);
+                                 $('#imprumut1').val(bookDB[m].imprumutata);
+
+                             $("#submit1").off();
+                                 $( "#submit1" ).click(function(){
+
+                                       var tit=$('#titlu1').val();
+
+                                       if(tit!=null){
+                                         tit=tit.trim();
+                                         if(tit.length===0)
+                                                      {alert("Nu ai introdus o carte!");
+                                                      e.preventDefault();}
+                                         //daca nu s-a introdus carte alert
+                                         else {
+                                                bookDB[m].titlu=$('#titlu1').val();
+                                                bookDB[m].autor=$('#autor1').val();
+                                                bookDB[m].editura=$('#editura1').val();
+                                                bookDB[m].nrpag=$('#nrpag1').val();
+                                                bookDB[m].imprumutata=$('#imprumut1').val();
+
+                                              }
+
+                                         }
+
+                                   afisaretab();
+                                   $("#myModal1").modal('hide');
+                                     }
+
+                               );
+
+                             } );
+
+  }
+
+
+ $( document ).ready(function() {
+
+//afisare tabel cu carti in pag
+afisaretab();
+
+//onclick adaugare: show form+ onclick submit: hide form + adaugare carte noua in array+afisare tabel pe pag
+$( "#buton1" ).click(function(){
+
+
+ $('#titlu').val('');
+ $('#autor').val('');
+ $('#editura').val('');
+ $('#nrpag').val('');
+ $('#imprumut').val('');
+
+
+ $( "#submit" ).click(function(){
+
+
+//verifica daca s-a adaugat o carte sau daca e string, daca nu -> alert
+var title=$('#titlu').val();
+
+if(title!=null){
+      title=title.trim();
+      if(title.length===0)
+                   alert("Nu ai introdus o carte!");
+      //daca nu s-a introdus carte alert
+
+
+else if(newBook($('#titlu').val(),$('#autor').val(),$('#editura').val(),$('#nrpag').val(),$('#imprumut').val(),undefined,bookDB[1].modifica,bookDB[1].sterge)===false)alert("Cartea aleasa exista deja in tabel!");
+//altfel daca exista cartea deja alert
+
+else{ //bookDB[0].imagine=undefined;
+      afisaretab();}
+      $("#myModal").modal('hide');
+}
+//altfel adauga cartea in tabel
+e.preventDefault();
+    });
+});
+
+
+//sortare array la click+afisare tabel in pag
+$( "#buton2" ).click(function()
+{ if(confirm("Esti sigur/a ca vrei sa sortezi cartile dupa numarul de pagini?")===true)
+        {sortBook(bookDB);
+         afisaretab();
+}
+ });
+
+
+});
+
+
+  </script>
+
+</body>
+
+</html>
